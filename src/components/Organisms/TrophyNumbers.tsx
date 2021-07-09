@@ -18,8 +18,9 @@ const TrophyNumbers = () => {
         height="calc(100vh - 328px)"
       >
         <Atoms.Title margin="0px 0px 16px 0px">
-          YOU GOT {correctQuizNumbers}{' '}
-          {correctQuizNumbers == 1 ? 'THROPY' : 'THROPIES'}
+          {`YOU GOT ${correctQuizNumbers} ${
+            correctQuizNumbers > 1 ? 'THROPIES' : 'THROPY'
+          }`}
         </Atoms.Title>
         {correctQuizNumbers > 0 ? (
           <AnimationLoader
