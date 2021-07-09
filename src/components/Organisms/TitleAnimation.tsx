@@ -3,13 +3,13 @@ import Atoms from 'components/Atoms';
 
 const TitleAnimation = () => {
   return (
-    <Content marginTop="0px">
+    <Content marginTop="0px" height="calc(100vh - 328px)">
       <Atoms.Div
         display="flex"
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        height="calc(100vh - 328px)"
+        height="100%"
       >
         <Atoms.Title margin="0px 0px 16px 0px">TROPHY QUIZ</Atoms.Title>
         <AnimationLoader
