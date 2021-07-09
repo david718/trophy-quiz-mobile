@@ -8,7 +8,6 @@ const ShimmerPage = () => {
       <OrganismShimmer />
       <OrganismShimmer />
       <OrganismShimmer />
-      <OrganismShimmer />
     </>
   );
 };

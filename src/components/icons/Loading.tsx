@@ -1,12 +1,9 @@
 import { useCallback, useEffect } from 'react';
 
 import Atoms from 'components/Atoms';
+import { AnimationProps } from './Box';
 
-type LoadingProps = {
-  size?: string;
-};
-
-const Loading = ({ size }: LoadingProps) => {
+const Loading = ({ size }: AnimationProps) => {
   const containerRef = useCallback((node: HTMLDivElement) => {
     if (node !== null) {
       import('lottie-web').then((Lottie) => {

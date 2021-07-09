@@ -4,10 +4,8 @@ import { getQueryData } from 'src/utils';
 import Atoms from 'components/Atoms';
 
 export type ContentProps = {
-  required?: boolean;
   height?: string;
   marginTop?: string;
-  marginBottom?: string;
   header?: ReactNode;
   headerBorderBottom?: string;
   headerRight?: ReactNode;
@@ -16,10 +14,8 @@ export type ContentProps = {
 };
 
 const Content = ({
-  required,
   height,
   marginTop,
-  marginBottom,
   header,
   headerBorderBottom,
   headerRight,
@@ -33,7 +29,6 @@ const Content = ({
       width="100%"
       background="var(--white)"
       marginTop={marginTop || '4px'}
-      marginBottom={marginBottom}
     >
       {header && (
         <Atoms.Div
@@ -41,12 +36,12 @@ const Content = ({
           justifyContent="space-between"
           alignItems="center"
           padding={`var(--padding-${platform})`}
-          height="56px"
+          height="48px"
           boxSizing="border-box"
           borderBottom={headerBorderBottom || '1px solid var(--grey-100)'}
         >
-          <Atoms.Title height="56px">{header}</Atoms.Title>
-          <Atoms.Div display="flex" alignItems="center">
+          <Atoms.SubTitle>{header}</Atoms.SubTitle>
+          <Atoms.Div display="flex" alignItems="center" fontSize="20px">
             {headerRight}
           </Atoms.Div>
         </Atoms.Div>

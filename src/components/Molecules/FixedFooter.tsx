@@ -4,27 +4,19 @@ import styled, { CSSProperties } from 'styled-components';
 import { getQueryData, isIosNotch } from 'src/utils';
 
 const SFixedFooterOverlappedDiv = styled.div<CSSProperties & FixedFooterProps>`
-  height: ${({ isUsing }) => {
-    let result = 81;
-    if (isIosNotch()) result += 16;
-    if (isUsing) result += 40;
-
-    return `${result}px`;
-  }};
+  height: ${() => (isIosNotch() ? '96px' : '80px')};
   width: 100%;
 `;
 
 const SFixedFooterWrapper = styled.div<CSSProperties & FixedFooterProps>`
   position: fixed;
   bottom: 0;
-  padding: ${({ padding }) => padding};
-  height: ${({ isUsing }) => {
-    let result = 81;
-    if (isIosNotch()) result += 16;
-    if (isUsing) result += 40;
 
-    return `${result}px`;
-  }};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: ${({ padding }) => padding};
+  height: ${() => (isIosNotch() ? '96px' : '80px')};
   width: 100%;
 
   text-align: center;
@@ -34,18 +26,13 @@ const SFixedFooterWrapper = styled.div<CSSProperties & FixedFooterProps>`
 `;
 
 type FixedFooterProps = {
-  isUsing?: boolean;
   children?: React.ReactNode;
 };
 
-const FixedFooter = ({ isUsing, children }: FixedFooterProps) => {
+const FixedFooter = ({ children }: FixedFooterProps) => {
   const { platform } = getQueryData();
   const [visible, setVisible] = useState(true);
   if (!visible) return null;
-
-  const handleResizeVisible = () => {
-    setVisible((prev) => !prev);
-  };
 
   useEffect(() => {
     const listener = () => {
@@ -60,20 +47,15 @@ const FixedFooter = ({ isUsing, children }: FixedFooterProps) => {
     };
 
     window.visualViewport.addEventListener('resize', listener);
-    // window.addEventListener('resize', handleResizeVisible);
     return () => {
       window.visualViewport.removeEventListener('resize', listener);
-      // window.removeEventListener('resize', handleResizeVisible);
     };
   }, []);
 
   return (
     <>
-      <SFixedFooterOverlappedDiv isUsing={isUsing}></SFixedFooterOverlappedDiv>
-      <SFixedFooterWrapper
-        isUsing={isUsing}
-        padding={`var(--padding-${platform})`}
-      >
+      <SFixedFooterOverlappedDiv />
+      <SFixedFooterWrapper padding={`var(--padding-${platform})`}>
         {children}
       </SFixedFooterWrapper>
     </>

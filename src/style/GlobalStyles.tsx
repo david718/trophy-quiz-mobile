@@ -2,56 +2,13 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle<any>`
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: local('Roboto'),
-      url("fonts/roboto-v27-latin-regular.woff2") format('woff2'),
-      url("fonts/roboto-v27-latin-regular.woff") format('woff'),
-      url("fonts/roboto-v27-latin-regular.ttf") format('truetype');
-  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-display: block;
-  src: local('Roboto'),
-      url("fonts/roboto-v27-latin-700.woff2") format('woff2'),
-      url("fonts/roboto-v27-latin-700.woff") format('woff'),
-      url("fonts/roboto-v27-latin-700.ttf") format('truetype');
-  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
-}
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: local('Noto Sans KR'),
-      url("fonts/noto-sans-kr-v13-korean-regular.woff2") format('woff2'),
-      url("fonts/noto-sans-kr-v13-korean-regular.woff") format('woff');
-  unicode-range: U+AC00-U+D7A3;
-}
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 700;
-  font-display: block;
-  src: local('Noto Sans KR'),
-      url("fonts/noto-sans-kr-v13-korean-700.woff2") format('woff2'),
-      url("fonts/noto-sans-kr-v13-korean-700.woff") format('woff');
-  unicode-range: U+AC00-U+D7A3;
-}
-
   body {
     margin:0;
     height: 100%;
     width: 100vw;
     background:${({ background }) => background || 'var(--grey-100)'};
     font-size:14px;
-    font-family: -apple-system, Roboto, BlinkMacSystemFont, 'Noto Sans KR', sans-serif, Arial;
+    font-family: -apple-system, Roboto, BlinkMacSystemFont, sans-serif, Arial;
     user-select: none;
     -webkit-touch-callout: none;
     -webkit-font-smoothing: antialiased;
@@ -102,11 +59,6 @@ const GlobalStyles = createGlobalStyle<any>`
   --padding-android: 0px 16px;
   --padding-ios: 0px 24px;
   --padding-undefined: 0px 24px;
-  --fill-grey-500-50: rgba(82, 85, 97, 0.5);
-  --fill-white-20: rgba(255, 255, 255, 0.2);
-  --fill-primary-400-20: rgba(41, 70, 190, 0.2);
-  --fill-primary-200-50: rgba(225, 231, 255, 0.5);
-  --fill-grey-200-30: rgba(220, 222, 225, 0.3);
   }
 `;
 

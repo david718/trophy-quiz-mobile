@@ -49,28 +49,21 @@ class ErrorBoundary extends Component<Props, State> {
           >
             <Exclamation size="big" />
             <Atoms.Div marginTop="16px" fontWeight="bold" fontSize="20px">
-              페이지를 찾을 수 없습니다.
+              404 NOT FOUND
             </Atoms.Div>
             <Atoms.Div
               marginTop="12px"
               textAlign="center"
               color="var(--grey-400)"
             >
-              {error?.data?.message ? (
-                <>
-                  <Atoms.Div>{error?.data?.message?.title}</Atoms.Div>
-                  <Atoms.Div>{error?.data?.message?.description}</Atoms.Div>
-                </>
-              ) : (
-                <Atoms.Div>
-                  주소가 잘못 입력되었거나,
-                  <br />
-                  변경 혹은 삭제되어 요청하신 페이지를 찾을 수 없습니다.
-                  <br />
-                  궁금하신 점이 있으시면 언제든 <br />
-                  고객센터를 통해 문의해 주시기 바랍니다.
-                </Atoms.Div>
-              )}
+              <Atoms.Div>
+                The page you requested could not be found
+                <br />
+                because the address was entered incorrectly, changed or deleted.
+              </Atoms.Div>
+            </Atoms.Div>
+            <Atoms.Div marginTop="12px" width="100%">
+              <Atoms.Button width="90%">START PAGE</Atoms.Button>
             </Atoms.Div>
           </Atoms.Div>
         </Atoms.Div>

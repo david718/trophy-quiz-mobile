@@ -95,7 +95,6 @@ export default styled.button<
   line-height: ${({ lineHeight }) => lineHeight};
   width: ${({ width }) => width};
 
-  transition: 0.15s;
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 

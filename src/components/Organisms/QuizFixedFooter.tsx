@@ -1,12 +1,15 @@
-import { FixedFooter } from 'components/Molecules';
-import Atoms from 'components/Atoms';
+import { useHistory } from 'react-router';
 import { useRecoilState, useRecoilValue } from 'recoil';
+
+import { TResponseData } from 'src/state/InitialProps';
 import {
   CurrentQuizIndexState,
   InitialPropsState,
   SelectedAnswerState,
 } from 'src/state';
-import { useHistory } from 'react-router';
+import { FixedFooter } from 'components/Molecules';
+import Atoms from 'components/Atoms';
+import { RightArrow } from 'components/icons';
 
 const QuizFixedFooter = () => {
   const history = useHistory();
@@ -17,7 +20,8 @@ const QuizFixedFooter = () => {
   const [selectedAnswer, setSelectedAnswer] = useRecoilState(
     SelectedAnswerState,
   );
-  const isLastQuiz = currentQuizIndex == initialProps.results.length - 1;
+  const isLastQuiz =
+    currentQuizIndex == (initialProps as TResponseData).results.length - 1;
   const isSolved = selectedAnswer != undefined;
 
   const handleClick = () => {
@@ -42,7 +46,13 @@ const QuizFixedFooter = () => {
         disabled={!isSolved}
         onClick={handleClick}
       >
-        {isLastQuiz && isSolved ? 'CHECK RESULT' : 'NEXT'}
+        {isLastQuiz ? (
+          'RESULTS'
+        ) : (
+          <>
+            NEXT <RightArrow color="var(--white)" />
+          </>
+        )}
       </Atoms.Button>
     </FixedFooter>
   );

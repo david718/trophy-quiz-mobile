@@ -1,6 +1,6 @@
 import styled, { CSSProperties } from 'styled-components';
 
-export default styled.input<CSSProperties>`
+export default styled.select<CSSProperties>`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -18,8 +18,5 @@ export default styled.input<CSSProperties>`
 
   :focus {
     outline: none;
-  }
-  ::placeholder {
-    color: var(--grey-300);
   }
 `;

@@ -1,7 +1,9 @@
 const decodeHtml = (html: string) => {
-  var txt = document.createElement('textarea');
+  let txt: null | HTMLTextAreaElement = document.createElement('textarea');
   txt.innerHTML = html;
-  return txt.value;
+  const decodedValue = txt.value;
+  txt = null;
+  return decodedValue;
 };
 
 export default decodeHtml;
