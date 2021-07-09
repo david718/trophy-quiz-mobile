@@ -11,7 +11,7 @@ const ResultsPage = () => {
     <>
       <TrophyNumbers />
       <Content
-        header={`Total Duration : ${
+        header={`Duration : ${
           Math.floor(
             quizResults
               .map((quiz) => quiz.duration)

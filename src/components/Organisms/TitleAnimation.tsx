@@ -1,15 +1,19 @@
 import { AnimationLoader, Content } from 'components/Molecules';
 import Atoms from 'components/Atoms';
+import { isIosNotch } from 'src/utils';
 
 const TitleAnimation = () => {
+  isIosNotch() ? '96px' : '80px';
   return (
-    <Content marginTop="0px" height="calc(100vh - 328px)">
+    <Content marginTop="0px">
       <Atoms.Div
         display="flex"
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        height="100%"
+        height={`calc(100% - 124px - 124px - ${
+          isIosNotch() ? '96px' : '80px'
+        })`}
       >
         <Atoms.Title margin="0px 0px 16px 0px">TROPHY QUIZ</Atoms.Title>
         <AnimationLoader
