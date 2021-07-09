@@ -1,13 +1,12 @@
 import { useRecoilValue } from 'recoil';
 
 import { QuizResultsState } from 'src/state';
-import { TrophyNumbers, ResultsFooter } from 'components/Organisms';
+import { TrophyNumbers, ScoreChart, ResultsFooter } from 'components/Organisms';
 import { Content } from 'components/Molecules';
 
 const ResultsPage = () => {
   const quizResults = useRecoilValue(QuizResultsState);
-  const correctQuizNumbers = quizResults.filter((quiz) => quiz.correct).length;
-  console.log(correctQuizNumbers);
+
   return (
     <>
       <TrophyNumbers />
@@ -20,7 +19,7 @@ const ResultsPage = () => {
           ) / 10
         }s`}
       />
-      <Content></Content>
+      <ScoreChart />
       <ResultsFooter />
     </>
   );

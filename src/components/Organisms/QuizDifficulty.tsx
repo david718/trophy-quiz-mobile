@@ -14,6 +14,7 @@ const QuizDifficulty = () => {
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setQuizDifficulty(e.target.value);
   };
+
   return (
     <Content header="Difficulty">
       <Atoms.Select

@@ -15,6 +15,9 @@ export const EASY_DIFFICULTY = 'easy';
 export const MEDIUM_DIFFICULTY = 'medium';
 export const HARD_DIFFICULTY = 'hard';
 
+export const CORRECT_COLOR = 'var(--green-400)'
+export const INCORRECT_COLOR = 'var(--red-400)'
+
 export const difficulties = [
   ANY_DIFFICULTY,
   EASY_DIFFICULTY,

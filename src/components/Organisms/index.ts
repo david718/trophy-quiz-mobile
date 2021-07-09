@@ -6,6 +6,7 @@ import QuizFooter from './QuizFooter';
 import QuizNumbers from './QuizNumbers';
 import QuizResult from './QuizResult';
 import ResultsFooter from './ResultsFooter';
+import ScoreChart from './ScoreChart';
 import TitleAnimation from './TitleAnimation';
 import TrophyNumbers from './TrophyNumbers';
 
@@ -13,11 +14,12 @@ export {
   QuizDifficulty,
   LandingFooter,
   QuizNumbers,
-  TitleAnimation,
   OrganismShimmer,
   Quiz,
   QuizFooter,
   QuizResult,
   ResultsFooter,
+  ScoreChart,
+  TitleAnimation,
   TrophyNumbers,
 };

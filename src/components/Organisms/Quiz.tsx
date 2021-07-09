@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 
+import { CORRECT_COLOR, INCORRECT_COLOR } from 'src/constant';
 import { TResponseData } from 'src/state/InitialProps';
 import {
   InitialPropsState,
@@ -83,10 +84,10 @@ const Quiz = () => {
                   style={{
                     color:
                       answer != selectedAnswer
-                        ? 'black'
+                        ? 'var(--black)'
                         : currentQuiz.correct_answer == selectedAnswer
-                        ? 'var(--green-400)'
-                        : 'var(--red-400)',
+                        ? CORRECT_COLOR
+                        : INCORRECT_COLOR,
                   }}
                 >
                   {answer}
