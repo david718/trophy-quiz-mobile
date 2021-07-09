@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useRecoilValue } from 'recoil';
 
 import { isIosNotch } from 'src/utils';
@@ -8,9 +7,8 @@ import {
   InitialPropsState,
   SelectedAnswerState,
 } from 'src/state';
-import { Content } from 'components/Molecules';
+import { AnimationLoader, Content } from 'components/Molecules';
 import Atoms from 'components/Atoms';
-import { Box, Empty, Trophy } from 'components/icons';
 
 const QuizResult = () => {
   const initialProps = useRecoilValue(InitialPropsState);
@@ -18,14 +16,6 @@ const QuizResult = () => {
   const selectedAnswer = useRecoilValue(SelectedAnswerState);
 
   const currentQuiz = (initialProps as TResponseData).results[currentQuizIndex];
-
-  useEffect(() => {
-    return () => {
-      import('lottie-web').then((Lottie) => {
-        (Lottie as any).destroy();
-      });
-    };
-  }, []);
 
   return (
     <Content>
@@ -36,15 +26,26 @@ const QuizResult = () => {
         height={`calc(100vh - ${isIosNotch() ? '96px' : '80px'} - 348px - 4px)`}
       >
         {selectedAnswer == undefined ? (
-          <Box />
+          <AnimationLoader
+            name="box"
+            path="https://assets6.lottiefiles.com/packages/lf20_q8buwK.json"
+          />
         ) : currentQuiz.correct_answer == selectedAnswer ? (
-          <Trophy size="200px" />
+          <AnimationLoader
+            name="trophy"
+            path="https://assets1.lottiefiles.com/packages/lf20_rmlyntkm.json"
+          />
         ) : (
-          <Empty />
+          <AnimationLoader
+            name="empty"
+            path="https://assets6.lottiefiles.com/packages/lf20_aEFaHc.json"
+          />
         )}
       </Atoms.Div>
     </Content>
   );
 };
+
+//box : 'https://assets6.lottiefiles.com/packages/lf20_q8buwK.json'
 
 export default QuizResult;

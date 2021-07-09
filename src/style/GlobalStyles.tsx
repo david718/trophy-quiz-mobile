@@ -6,7 +6,7 @@ const GlobalStyles = createGlobalStyle<any>`
     margin:0;
     height: 100%;
     width: 100vw;
-    background:${({ background }) => background || 'var(--grey-100)'};
+    background: var(--grey-100);
     font-size:14px;
     font-family: -apple-system, Roboto, BlinkMacSystemFont, sans-serif, Arial;
     user-select: none;

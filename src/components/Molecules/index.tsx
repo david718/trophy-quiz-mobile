@@ -1,5 +1,6 @@
+import AnimationLoader from './AnimationLoader';
 import Content from './Content';
 import FixedFooter from './FixedFooter';
 import Shimmer from './Shimmer';
 
-export { Content, FixedFooter, Shimmer };
+export { AnimationLoader, Content, FixedFooter, Shimmer };

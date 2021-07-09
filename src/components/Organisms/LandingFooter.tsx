@@ -9,7 +9,7 @@ import {
   QuizNumbersState,
 } from 'src/state';
 
-const LandingFixedFooter = () => {
+const LandingFooter = () => {
   const history = useHistory();
   const quizNumbers = useRecoilValue(QuizNumbersState);
   const quizDifficulty = useRecoilValue(QuizDifficultyState);
@@ -39,4 +39,4 @@ const LandingFixedFooter = () => {
   );
 };
 
-export default LandingFixedFooter;
+export default LandingFooter;

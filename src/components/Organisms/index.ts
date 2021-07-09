@@ -1,21 +1,23 @@
-import LandingFixedFooter from './LandingFixedFooter';
-import LandingTitleAnimation from './LandingTitleAnimation';
+import LandingFooter from './LandingFooter';
 import OrganismShimmer from './OrganismShimmer';
 import Quiz from './Quiz';
 import QuizDifficulty from './QuizDifficulty';
-import QuizFixedFooter from './QuizFixedFooter';
+import QuizFooter from './QuizFooter';
 import QuizNumbers from './QuizNumbers';
 import QuizResult from './QuizResult';
-import ResultFixedFooter from './ResultFixedFooter';
+import ResultsFooter from './ResultsFooter';
+import TitleAnimation from './TitleAnimation';
+import TrophyNumbers from './TrophyNumbers';
 
 export {
-  LandingFixedFooter,
-  LandingTitleAnimation,
+  QuizDifficulty,
+  LandingFooter,
+  QuizNumbers,
+  TitleAnimation,
   OrganismShimmer,
   Quiz,
-  QuizDifficulty,
-  QuizFixedFooter,
-  QuizNumbers,
+  QuizFooter,
   QuizResult,
-  ResultFixedFooter,
+  ResultsFooter,
+  TrophyNumbers,
 };

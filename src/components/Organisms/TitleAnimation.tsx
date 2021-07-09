@@ -1,8 +1,7 @@
-import { Content } from 'components/Molecules';
+import { AnimationLoader, Content } from 'components/Molecules';
 import Atoms from 'components/Atoms';
-import { Trophy } from 'components/icons';
 
-const LandingTitleAnimation = () => {
+const TitleAnimation = () => {
   return (
     <Content marginTop="0px">
       <Atoms.Div
@@ -13,10 +12,14 @@ const LandingTitleAnimation = () => {
         height="calc(100vh - 328px)"
       >
         <Atoms.Title margin="0px 0px 16px 0px">TROPHY QUIZ</Atoms.Title>
-        <Trophy />
+        <AnimationLoader
+          name="trophy"
+          path="https://assets1.lottiefiles.com/packages/lf20_rmlyntkm.json"
+          size="220px"
+        />
       </Atoms.Div>
     </Content>
   );
 };
 
-export default LandingTitleAnimation;
+export default TitleAnimation;

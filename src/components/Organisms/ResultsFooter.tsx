@@ -1,18 +1,24 @@
 import { useHistory } from 'react-router';
 import { useSetRecoilState } from 'recoil';
 
-import { CurrentQuizIndexState, SelectedAnswerState } from 'src/state';
+import {
+  CurrentQuizIndexState,
+  QuizResultsState,
+  SelectedAnswerState,
+} from 'src/state';
 import { FixedFooter } from 'components/Molecules';
 import Atoms from 'components/Atoms';
 
-const ResultFixedFooter = () => {
+const ResultsFooter = () => {
   const history = useHistory();
   const setCurrentQuizIndex = useSetRecoilState(CurrentQuizIndexState);
   const setSelectedAnswer = useSetRecoilState(SelectedAnswerState);
+  const setQuizResults = useSetRecoilState(QuizResultsState);
 
   const resetQuizIndexAndAnswer = () => {
     setCurrentQuizIndex(0);
     setSelectedAnswer(undefined);
+    setQuizResults([]);
   };
 
   const handleClick = () => {
@@ -52,4 +58,4 @@ const ResultFixedFooter = () => {
   );
 };
 
-export default ResultFixedFooter;
+export default ResultsFooter;

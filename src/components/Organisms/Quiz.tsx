@@ -1,14 +1,15 @@
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useEffect, useState } from 'react';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { TResponseData } from 'src/state/InitialProps';
 import {
   InitialPropsState,
   CurrentQuizIndexState,
   SelectedAnswerState,
+  QuizResultsState,
 } from 'src/state';
 import { Content } from 'components/Molecules';
 import Atoms from 'components/Atoms';
-import { useEffect } from 'react';
 
 const Quiz = () => {
   const initialProps = useRecoilValue(InitialPropsState);
@@ -17,6 +18,8 @@ const Quiz = () => {
   const [selectedAnswer, setSelectedAnswer] = useRecoilState(
     SelectedAnswerState,
   );
+  const setQuizResults = useSetRecoilState(QuizResultsState);
+  const [startTime, setStartTime] = useState<number>(Date.now());
 
   const handleChange = (e: any) => {
     if (e.target.name == currentQuiz) {
@@ -26,7 +29,19 @@ const Quiz = () => {
     }
 
     setSelectedAnswer(e.target.name);
+    setQuizResults((prev) => [
+      ...prev,
+      {
+        index: currentQuizIndex,
+        duration: Date.now() - startTime,
+        correct: e.target.name == currentQuiz.correct_answer,
+      },
+    ]);
   };
+
+  useEffect(() => {
+    setStartTime(Date.now());
+  }, [currentQuizIndex]);
 
   return (
     <Content

@@ -29,8 +29,6 @@ class ErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.error) {
-      const { error } = this.state;
-
       const { platform } = getQueryData();
       return (
         <Atoms.Div
@@ -61,9 +59,6 @@ class ErrorBoundary extends Component<Props, State> {
                 <br />
                 because the address was entered incorrectly, changed or deleted.
               </Atoms.Div>
-            </Atoms.Div>
-            <Atoms.Div marginTop="12px" width="100%">
-              <Atoms.Button width="90%">START PAGE</Atoms.Button>
             </Atoms.Div>
           </Atoms.Div>
         </Atoms.Div>

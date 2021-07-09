@@ -1,17 +1,17 @@
 import {
-  LandingTitleAnimation,
-  LandingFixedFooter,
-  QuizDifficulty,
+  TitleAnimation,
   QuizNumbers,
+  QuizDifficulty,
+  LandingFooter,
 } from 'components/Organisms';
 
 const LandingPage = () => {
   return (
     <>
-      <LandingTitleAnimation />
+      <TitleAnimation />
       <QuizNumbers />
       <QuizDifficulty />
-      <LandingFixedFooter />
+      <LandingFooter />
     </>
   );
 };

@@ -11,7 +11,7 @@ import { FixedFooter } from 'components/Molecules';
 import Atoms from 'components/Atoms';
 import { RightArrow } from 'components/icons';
 
-const QuizFixedFooter = () => {
+const QuizFooter = () => {
   const history = useHistory();
   const [currentQuizIndex, setCurrentQuizIndex] = useRecoilState(
     CurrentQuizIndexState,
@@ -58,4 +58,4 @@ const QuizFixedFooter = () => {
   );
 };
 
-export default QuizFixedFooter;
+export default QuizFooter;
