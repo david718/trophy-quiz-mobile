@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle<any>`
   body {
     margin:0;
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     background: var(--grey-100);
     font-size:14px;
