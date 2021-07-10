@@ -1,4 +1,12 @@
-import { IconProps } from './Information';
+import { CSSProperties } from 'react';
+
+export type IconProps = {
+  size?: string | number;
+  color?: string;
+  background?: string;
+  style?: CSSProperties;
+  onClick?: (e: React.MouseEvent<SVGRectElement | SVGSVGElement>) => void;
+};
 
 const Exclamation = ({ size, style, background }: IconProps) => {
   const cStyle = { marginRight: 4 };

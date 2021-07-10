@@ -16,7 +16,7 @@ const TrophyNumbers = () => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        height={`calc(100vh - 124px - 124px - ${
+        height={`calc(100vh - 52px - 196px - ${
           isIosNotch() ? '96px' : '80px'
         })`}
       >
