@@ -62,4 +62,7 @@ export default selector<TResponseData | undefined>({
     };
     return decodedResponseData;
   },
+  set: ({ get, set }) => {
+    set(QueryDataState);
+  },
 });
