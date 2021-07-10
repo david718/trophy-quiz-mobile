@@ -6,7 +6,7 @@ import {
   QuizDifficultyState,
   QuizNumbersState,
 } from 'src/state';
-import { DEFAULT_NUMBERS, QUIZ_PAGENAME, RESULT_PAGENAME } from 'src/constant';
+import { DEFAULT_NUMBERS, QUIZ_PAGENAME } from 'src/constant';
 
 export type TQuiz = {
   category: string;
@@ -27,9 +27,10 @@ export default selector<TResponseData>({
   key: 'initilaOrderState',
   get: async ({ get }) => {
     const queryData = get(QueryDataState);
+    console.log(queryData, window.location.pathname);
     if (
-      queryData == undefined ||
-      window.location.pathname != `/${QUIZ_PAGENAME}`
+      queryData == undefined
+      // window.location.pathname != `/${QUIZ_PAGENAME}`
     )
       return undefined;
 
@@ -62,6 +63,7 @@ export default selector<TResponseData>({
         };
       }),
     };
+    console.log(JSON.stringify(decodedResponseData));
     return decodedResponseData;
   },
   set: ({ get, set }) => {
