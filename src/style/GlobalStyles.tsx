@@ -14,6 +14,10 @@ const GlobalStyles = createGlobalStyle<any>`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  #root {
+    height: 100%;
+    width: 100%;
+  }
 
   img{
     border : 0;

@@ -46,7 +46,9 @@ const Content = ({
           </Atoms.Div>
         </Atoms.Div>
       )}
-      <Atoms.Div padding={`var(--padding-${platform})`}>{children}</Atoms.Div>
+      <Atoms.Div padding={`var(--padding-${platform})`} height="100%">
+        {children}
+      </Atoms.Div>
     </Atoms.Div>
   );
 };

@@ -10,15 +10,16 @@ const TrophyNumbers = () => {
   const correctQuizNumbers = quizResults.filter((quiz) => quiz.correct).length;
 
   return (
-    <Content marginTop="0px">
+    <Content
+      marginTop="0px"
+      height={`calc(100vh - 52px - 196px - ${isIosNotch() ? '96px' : '80px'})`}
+    >
       <Atoms.Div
         display="flex"
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        height={`calc(100vh - 52px - 196px - ${
-          isIosNotch() ? '96px' : '80px'
-        })`}
+        height="100%"
       >
         <Atoms.Title margin="0px 0px 16px 0px">
           {`YOU GOT ${correctQuizNumbers} ${
