@@ -1,8 +1,12 @@
 import { selector } from 'recoil';
 
 import { addCorrectAnswerRandomly, customAxios, decodeHtml } from 'src/utils';
-import { QueryDataState } from 'src/state';
-import { RESULT_PAGENAME } from 'src/constant';
+import {
+  QueryDataState,
+  QuizDifficultyState,
+  QuizNumbersState,
+} from 'src/state';
+import { DEFAULT_NUMBERS, QUIZ_PAGENAME, RESULT_PAGENAME } from 'src/constant';
 
 export type TQuiz = {
   category: string;
@@ -19,14 +23,13 @@ export type TResponseData = {
   results: TQuiz[];
 };
 
-export default selector<TResponseData | undefined>({
+export default selector<TResponseData>({
   key: 'initilaOrderState',
   get: async ({ get }) => {
     const queryData = get(QueryDataState);
-    console.log(queryData);
     if (
       queryData == undefined ||
-      window.location.pathname == `/${RESULT_PAGENAME}`
+      window.location.pathname != `/${QUIZ_PAGENAME}`
     )
       return undefined;
 
@@ -40,7 +43,6 @@ export default selector<TResponseData | undefined>({
         type: 'multiple',
       },
     });
-    console.log(response);
     const decodedResponseData = {
       ...response.data,
       results: response.data.results.map((quiz: TQuiz) => {
@@ -63,6 +65,11 @@ export default selector<TResponseData | undefined>({
     return decodedResponseData;
   },
   set: ({ get, set }) => {
-    set(QueryDataState);
+    const amount = get(QuizNumbersState);
+    const difficulty = get(QuizDifficultyState);
+
+    set(QueryDataState, { amount, difficulty });
+    set(QuizNumbersState, DEFAULT_NUMBERS);
+    set(QuizDifficultyState, undefined);
   },
 });

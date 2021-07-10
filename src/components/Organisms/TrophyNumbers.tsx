@@ -1,5 +1,6 @@
 import { useRecoilValue } from 'recoil';
 
+import { isIosNotch } from 'src/utils';
 import { QuizResultsState } from 'src/state';
 import { AnimationLoader, Content } from 'components/Molecules';
 import Atoms from 'components/Atoms';
@@ -15,7 +16,9 @@ const TrophyNumbers = () => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        height="calc(100vh - 328px)"
+        height={`calc(100vh - 124px - 124px - ${
+          isIosNotch() ? '96px' : '80px'
+        })`}
       >
         <Atoms.Title margin="0px 0px 16px 0px">
           {`YOU GOT ${correctQuizNumbers} ${

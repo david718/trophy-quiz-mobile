@@ -1,30 +1,16 @@
 import { useHistory } from 'react-router';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useResetRecoilState } from 'recoil';
 
-import { DEFAULT_NUMBERS } from 'src/constant';
-import {
-  QueryDataState,
-  QuizDifficultyState,
-  QuizNumbersState,
-} from 'src/state';
+import { InitialPropsState } from 'src/state';
 import { FixedFooter } from 'components/Molecules';
 import Atoms from 'components/Atoms';
 
 const LandingFooter = () => {
   const history = useHistory();
-  const [quizNumbers, setQuizNumbers] = useRecoilState(QuizNumbersState);
-  const [quizDifficulty, setQuizDifficulty] = useRecoilState(
-    QuizDifficultyState,
-  );
-  const setQueryData = useSetRecoilState(QueryDataState);
+  const resetIntialProps = useResetRecoilState(InitialPropsState);
 
   const handleClick = () => {
-    setQueryData({
-      amount: quizNumbers,
-      difficulty: quizDifficulty,
-    });
-    setQuizNumbers(DEFAULT_NUMBERS);
-    setQuizDifficulty(undefined);
+    resetIntialProps();
     history.push('/quiz');
   };
 

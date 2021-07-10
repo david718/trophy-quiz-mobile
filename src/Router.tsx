@@ -10,7 +10,7 @@ import {
   QuizPage,
   ResultsPage,
   ShimmerPage,
-} from 'src/components/pages';
+} from 'src/components/Pages';
 
 const Router = () => {
   return (

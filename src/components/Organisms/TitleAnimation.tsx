@@ -1,9 +1,8 @@
+import { isIosNotch } from 'src/utils';
 import { AnimationLoader, Content } from 'components/Molecules';
 import Atoms from 'components/Atoms';
-import { isIosNotch } from 'src/utils';
 
 const TitleAnimation = () => {
-  isIosNotch() ? '96px' : '80px';
   return (
     <Content marginTop="0px">
       <Atoms.Div
@@ -11,7 +10,7 @@ const TitleAnimation = () => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        height={`calc(100% - 124px - 124px - ${
+        height={`calc(100vh - 124px - 124px - ${
           isIosNotch() ? '96px' : '80px'
         })`}
       >
