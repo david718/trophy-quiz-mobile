@@ -20,7 +20,6 @@ const QuizNumbers = () => {
         min="1"
         max="50"
         margin="16px 0px"
-        defaultValue={DEFAULT_NUMBERS}
         value={quizNumbers}
         onChange={handleChange}
       />

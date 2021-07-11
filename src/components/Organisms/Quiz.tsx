@@ -23,11 +23,12 @@ const Quiz = () => {
   const [startTime, setStartTime] = useState<number>(Date.now());
 
   const handleChange = (e: any) => {
-    if (e.target.name == currentQuiz) {
-      const correctAnswersJSON = localStorage.getItem('cuiz_correct_answer');
-      const correctAnswers =
-        correctAnswersJSON && JSON.parse(correctAnswersJSON);
-    }
+    //여기 오답노트 만들자리
+    // if (e.target.name != currentQuiz) {
+    // const correctAnswersJSON = localStorage.getItem('cuiz_correct_answer');
+    // const correctAnswers =
+    //   correctAnswersJSON && JSON.parse(correctAnswersJSON);
+    //}
 
     setSelectedAnswer(e.target.name);
     setQuizResults((prev) => [

@@ -46,9 +46,9 @@ const FixedFooter = ({ children }: FixedFooterProps) => {
       setVisible(!isKeyboardOpen);
     };
 
-    window.visualViewport.addEventListener('resize', listener);
+    window.visualViewport?.addEventListener('resize', listener);
     return () => {
-      window.visualViewport.removeEventListener('resize', listener);
+      window.visualViewport?.removeEventListener('resize', listener);
     };
   }, []);
 

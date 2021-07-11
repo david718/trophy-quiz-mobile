@@ -29,8 +29,8 @@ export default selector<TResponseData>({
     const queryData = get(QueryDataState);
     console.log(queryData, window.location.pathname);
     if (
-      queryData == undefined
-      // window.location.pathname != `/${QUIZ_PAGENAME}`
+      queryData == undefined ||
+      window.location.pathname != `/${QUIZ_PAGENAME}`
     )
       return undefined;
 

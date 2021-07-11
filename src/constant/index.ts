@@ -5,11 +5,8 @@ export const RESULT_PAGENAME = 'result';
 export const QUIZ_PAGENAME = 'quiz';
 export const LANDING_PAGENAME = 'landing';
 
-
-export const DEFAULT_NUMBERS = 2; 
-
 export const MULTIPLE_TYPE = 'multiple';
-
+export const DEFAULT_NUMBERS = 2; 
 export const ANY_DIFFICULTY = 'Any Difficulty';
 export const EASY_DIFFICULTY = 'easy';
 export const MEDIUM_DIFFICULTY = 'medium';

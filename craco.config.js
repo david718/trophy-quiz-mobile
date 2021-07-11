@@ -57,15 +57,7 @@ module.exports = {
   },
   babel: {
     presets: [],
-    plugins: [
-      [
-        '@babel/plugin-transform-react-jsx',
-        {
-          runtime: 'automatic',
-          importSource: 'preact',
-        },
-      ],
-    ],
+    plugins: [],
     loaderOptions: {
       /* Any babel-loader configuration options: https://github.com/babel/babel-loader. */
     },
@@ -74,14 +66,9 @@ module.exports = {
     enableTypeChecking: true /* (default value)  */,
   },
   webpack: {
-    alias: {
-      react: 'preact/compat',
-      'react-dom/test-utils': 'preact/test-utils',
-      'react-dom': 'preact/compat',
-    },
+    alias: {},
     plugins: {
       add: [
-        new PreactRefreshPlugin(),
         new BundleAnalyzerPlugin({
           analyzerMode: 'static',
           reportFilename: 'docs/size_dev.html',
