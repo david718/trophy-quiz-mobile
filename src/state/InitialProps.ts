@@ -27,14 +27,15 @@ export default selector<TResponseData>({
   key: 'initilaOrderState',
   get: async ({ get }) => {
     const queryData = get(QueryDataState);
-    console.log(queryData, window.location.pathname);
     if (
       queryData == undefined ||
       window.location.pathname != `/${QUIZ_PAGENAME}`
     )
       return undefined;
 
+    console.log(queryData, window.location.pathname);
     const { amount, difficulty } = queryData;
+
     const axios = customAxios();
     const response = await axios({
       method: 'GET',

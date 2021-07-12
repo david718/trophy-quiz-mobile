@@ -1,3 +1,4 @@
+import Duration from './Duration';
 import LandingFooter from './LandingFooter';
 import OrganismShimmer from './OrganismShimmer';
 import Quiz from './Quiz';
@@ -11,8 +12,9 @@ import TitleAnimation from './TitleAnimation';
 import TrophyNumbers from './TrophyNumbers';
 
 export {
-  QuizDifficulty,
+  Duration,
   LandingFooter,
+  QuizDifficulty,
   QuizNumbers,
   OrganismShimmer,
   Quiz,

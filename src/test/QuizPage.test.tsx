@@ -1,5 +1,6 @@
-import { fireEvent, waitFor, render, findByText } from '@testing-library/react';
-import { RecoilRoot, useResetRecoilState } from 'recoil';
+import { Suspense } from 'react';
+import { RecoilRoot } from 'recoil';
+import { waitFor, render, getAllByRole } from '@testing-library/react';
 
 import { EASY_DIFFICULTY } from 'src/constant';
 import {
@@ -9,24 +10,28 @@ import {
   QuizNumbersState,
   SelectedAnswerState,
 } from 'src/state';
-import { Quiz } from 'src/components/Organisms';
+import { QuizResult } from 'src/components/Organisms';
+import Test from 'src/components/Organisms/Test';
 
 describe('Quiz Page', () => {
   it('render quiz with 4 examples', async () => {
-    const { findByText } = render(
+    const { getAllByRole, findAllByRole } = render(
       <RecoilRoot
         initializeState={({ set, reset }) => {
+          set(QuizNumbersState, 3);
+          set(QuizDifficultyState, undefined);
+          reset(InitialPropsState);
           set(CurrentQuizIndexState, 1);
           set(SelectedAnswerState, undefined);
-          reset(InitialPropsState);
         }}
       >
-        <Quiz />
+        <Suspense fallback="">
+          <Test />
+        </Suspense>
       </RecoilRoot>,
     );
-
-    const difficultySpanTag = await findByText('easy');
-
-    expect(difficultySpanTag).toBeInTheDocument();
+    await waitFor(() => {
+      const example = getAllByRole('checkbox');
+    });
   });
 });

@@ -18,12 +18,14 @@ const QuizResult = () => {
   const currentQuiz = (initialProps as TResponseData).results[currentQuizIndex];
 
   return (
-    <Content>
+    <Content
+      height={`calc(100% - ${isIosNotch() ? '96px' : '80px'} - 348px - 4px)`}
+    >
       <Atoms.Div
         display="flex"
         alignItems="center"
         justifyContent="center"
-        height={`calc(100vh - ${isIosNotch() ? '96px' : '80px'} - 348px - 4px)`}
+        height="100%"
       >
         {selectedAnswer == undefined ? (
           <AnimationLoader
@@ -45,7 +47,5 @@ const QuizResult = () => {
     </Content>
   );
 };
-
-//box : 'https://assets6.lottiefiles.com/packages/lf20_q8buwK.json'
 
 export default QuizResult;

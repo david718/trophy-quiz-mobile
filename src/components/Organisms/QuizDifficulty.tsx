@@ -18,6 +18,7 @@ const QuizDifficulty = () => {
   return (
     <Content header="Difficulty">
       <Atoms.Select
+        data-testid="select-difficulty"
         margin="16px 0px"
         value={quizDifficulty}
         onChange={handleChange}

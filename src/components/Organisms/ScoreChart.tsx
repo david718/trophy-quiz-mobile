@@ -74,11 +74,6 @@ const ScoreChart = () => {
               }`}
             </Atoms.Div>
           ))}
-          <Atoms.Div
-            margin="8px 0px"
-            fontSize="14px"
-            color="var(--black)"
-          ></Atoms.Div>
         </Atoms.Div>
       </Atoms.Div>
     </Content>
