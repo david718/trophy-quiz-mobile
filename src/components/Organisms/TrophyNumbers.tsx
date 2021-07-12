@@ -12,7 +12,7 @@ const TrophyNumbers = () => {
   return (
     <Content
       marginTop="0px"
-      height={`calc(100vh - 52px - 196px - ${isIosNotch() ? '96px' : '80px'})`}
+      height={`calc(100% - 52px - 196px - ${isIosNotch() ? '96px' : '80px'})`}
     >
       <Atoms.Div
         display="flex"
