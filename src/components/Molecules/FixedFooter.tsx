@@ -34,23 +34,23 @@ const FixedFooter = ({ children }: FixedFooterProps) => {
   const [visible, setVisible] = useState(true);
   if (!visible) return null;
 
-  useEffect(() => {
-    const listener = () => {
-      const MIN_KEYBOARD_HEIGHT = 300; // N.B.! this might not always be correct
+  // useEffect(() => {
+  //   const listener = () => {
+  //     const MIN_KEYBOARD_HEIGHT = 300; // N.B.! this might not always be correct
 
-      const isMobile = window.innerWidth < 768;
-      const isKeyboardOpen =
-        isMobile &&
-        window.screen.height - MIN_KEYBOARD_HEIGHT >
-          window.visualViewport.height;
-      setVisible(!isKeyboardOpen);
-    };
+  //     const isMobile = window.innerWidth < 768;
+  //     const isKeyboardOpen =
+  //       isMobile &&
+  //       window.screen.height - MIN_KEYBOARD_HEIGHT >
+  //         window.visualViewport.height;
+  //     setVisible(!isKeyboardOpen);
+  //   };
 
-    window.visualViewport?.addEventListener('resize', listener);
-    return () => {
-      window.visualViewport?.removeEventListener('resize', listener);
-    };
-  }, []);
+  //   window.visualViewport?.addEventListener('resize', listener);
+  //   return () => {
+  //     window.visualViewport?.removeEventListener('resize', listener);
+  //   };
+  // }, []);
 
   return (
     <>
