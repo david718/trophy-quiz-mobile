@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import styled, { CSSProperties } from 'styled-components';
 
 import { getQueryData, isIosNotch } from 'src/utils';
@@ -31,26 +30,6 @@ type FixedFooterProps = {
 
 const FixedFooter = ({ children }: FixedFooterProps) => {
   const { platform } = getQueryData();
-  const [visible, setVisible] = useState(true);
-  if (!visible) return null;
-
-  useEffect(() => {
-    const listener = () => {
-      const MIN_KEYBOARD_HEIGHT = 300; // N.B.! this might not always be correct
-
-      const isMobile = window.innerWidth < 768;
-      const isKeyboardOpen =
-        isMobile &&
-        window.screen.height - MIN_KEYBOARD_HEIGHT >
-          window.visualViewport.height;
-      setVisible(!isKeyboardOpen);
-    };
-
-    window.addEventListener('resize', listener);
-    return () => {
-      window.removeEventListener('resize', listener);
-    };
-  }, []);
 
   return (
     <>
