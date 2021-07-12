@@ -9,8 +9,6 @@ const QuizNumbers = () => {
   const [quizNumbers, setQuizNumbers] = useRecoilState(QuizNumbersState);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value, '@@@');
-
     setQuizNumbers(Number(e.target.value));
   };
 

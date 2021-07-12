@@ -1,11 +1,10 @@
 {
-  "name": "carplat-biz-webview",
-  "description": "webview for carplat-biz",
-  "ver": "1.10.0.6",
+  "name": "classting",
+  "description": "subject",
+  "ver": "0.0.0",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.1.1",
-    "@prefresh/webpack": "^3.2.2",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
@@ -13,8 +12,6 @@
     "axios": "^0.21.1",
     "craco-alias": "^2.2.0",
     "lottie-web": "^5.7.11",
-    "preact": "^10.5.4",
-    "preact-compat": "^3.19.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
@@ -29,10 +26,8 @@
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.13.12",
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/preact": "^2.0.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/react-hooks": "^7.0.1",
-    "@testing-library/user-event": "^13.1.9",
     "@types/react-helmet": "^6.1.1",
     "@types/react-router-dom": "^5.1.7",
     "@types/recharts": "^2.0.0",
@@ -85,6 +80,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "version": "1.0.0"
+  }
 }

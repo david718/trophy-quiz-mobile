@@ -7,6 +7,13 @@ import {
 } from 'recoil';
 import { renderHook } from '@testing-library/react-hooks';
 
+import { EASY_DIFFICULTY } from 'src/constant';
+import {
+  InitialPropsState,
+  QuizDifficultyState,
+  QuizNumbersState,
+} from 'src/state';
+
 export const renderRecoilValue = <T extends Object>(
   recoilValue: RecoilValue<T>,
   initializeState?: (mutableSnapshot: MutableSnapshot) => void,
