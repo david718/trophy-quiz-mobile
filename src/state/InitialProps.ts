@@ -33,7 +33,6 @@ export default selector<TResponseData>({
     )
       return undefined;
 
-    console.log(queryData, window.location.pathname);
     const { amount, difficulty } = queryData;
 
     const axios = customAxios();
@@ -64,7 +63,6 @@ export default selector<TResponseData>({
         };
       }),
     };
-    console.log(JSON.stringify(decodedResponseData));
     return decodedResponseData;
   },
   set: ({ get, set }) => {

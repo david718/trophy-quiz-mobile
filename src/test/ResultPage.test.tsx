@@ -1,5 +1,5 @@
 import { RecoilRoot } from 'recoil';
-import { render, screen } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 
 import { QuizResultsState } from 'src/state';
 import { Duration, ScoreChart } from 'src/components/Organisms';
@@ -22,6 +22,7 @@ beforeEach(() => {
     </RecoilRoot>,
   );
 });
+afterEach(cleanup);
 
 describe('Result Page', () => {
   it('render duration', () => {

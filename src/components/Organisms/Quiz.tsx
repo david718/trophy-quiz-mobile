@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 
-import { CORRECT_COLOR, INCORRECT_COLOR } from 'src/constant';
 import { TResponseData } from 'src/state/InitialProps';
 import {
   InitialPropsState,
@@ -11,6 +10,7 @@ import {
 } from 'src/state';
 import { Content } from 'components/Molecules';
 import Atoms from 'components/Atoms';
+import { EXAMPLE_LABEL_TEST_ID } from 'src/constant';
 
 const Quiz = () => {
   const initialProps = useRecoilValue(InitialPropsState);
@@ -62,40 +62,25 @@ const Quiz = () => {
       >
         <Atoms.Div>
           <Atoms.Div fontSize="24px">{currentQuiz.question}</Atoms.Div>
-          <ul style={{ margin: '16px 0px 0px 0px', padding: 0 }}>
-            {currentQuiz.examples.map((answer: string) => (
-              <li
-                style={{
-                  listStyle: 'none',
-                  display: 'flex',
-                  alignItems: 'center',
-                  marginTop: 8,
-                  fontSize: 20,
-                }}
-                key={answer}
-                value={answer}
-              >
+          <Atoms.Ul>
+            {currentQuiz.examples.map((answer: string, i: number) => (
+              <Atoms.Li key={answer} value={answer}>
                 <Atoms.Checkbox
                   id={answer}
                   name={answer}
                   disabled={selectedAnswer != undefined}
                   onChange={handleChange}
                 />
-                <label
-                  style={{
-                    color:
-                      answer != selectedAnswer
-                        ? 'var(--black)'
-                        : currentQuiz.correct_answer == selectedAnswer
-                        ? CORRECT_COLOR
-                        : INCORRECT_COLOR,
-                  }}
+                <Atoms.Label
+                  data-testid={EXAMPLE_LABEL_TEST_ID + i}
+                  isSelected={selectedAnswer == answer}
+                  isCorrect={selectedAnswer == currentQuiz.correct_answer}
                 >
                   {answer}
-                </label>
-              </li>
+                </Atoms.Label>
+              </Atoms.Li>
             ))}
-          </ul>
+          </Atoms.Ul>
         </Atoms.Div>
       </Atoms.Div>
     </Content>

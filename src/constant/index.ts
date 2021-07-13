@@ -21,3 +21,6 @@ export const difficulties = [
   MEDIUM_DIFFICULTY,
   HARD_DIFFICULTY,
 ];
+
+export const DIFFICULTY_SELECT_TEST_ID = 'difficulty-select'
+export const EXAMPLE_LABEL_TEST_ID = 'example-label'

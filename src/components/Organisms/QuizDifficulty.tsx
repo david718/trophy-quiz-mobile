@@ -1,7 +1,11 @@
 import { ChangeEvent } from 'react';
 import { useRecoilState } from 'recoil';
 
-import { ANY_DIFFICULTY, difficulties } from 'src/constant';
+import {
+  ANY_DIFFICULTY,
+  difficulties,
+  DIFFICULTY_SELECT_TEST_ID,
+} from 'src/constant';
 import { QuizDifficultyState } from 'src/state';
 import { Content } from 'components/Molecules';
 import Atoms from 'components/Atoms';
@@ -18,7 +22,7 @@ const QuizDifficulty = () => {
   return (
     <Content header="Difficulty">
       <Atoms.Select
-        data-testid="select-difficulty"
+        data-testid={DIFFICULTY_SELECT_TEST_ID}
         margin="16px 0px"
         value={quizDifficulty}
         onChange={handleChange}

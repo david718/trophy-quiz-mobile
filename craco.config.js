@@ -26,6 +26,10 @@ module.exports = {
     },
   },
   jest: {
+    moduleNameMapper: {
+      'styled-components':
+        '<rootDir>/node_modules/styled-components/dist/styled-components.browser.cjs.js',
+    },
     babel: {
       addPresets: true,
       addPlugins: true,

@@ -18,11 +18,11 @@ const Router = () => {
       <ErrorBoundary>
         <Suspense fallback={<ShimmerPage />}>
           <Switch>
-            <Route exact path={`/${QUIZ_PAGENAME}`}>
+            <Route path={`/${QUIZ_PAGENAME}`}>
               <Helmet title="Quiz page" />
               <QuizPage />
             </Route>
-            <Route exact path={`/${RESULT_PAGENAME}`}>
+            <Route path={`/${RESULT_PAGENAME}`}>
               <Helmet title="Result page" />
               <ResultsPage />
             </Route>
