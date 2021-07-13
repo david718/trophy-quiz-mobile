@@ -30,9 +30,9 @@
 ## View logic
 
 - Atomic Design 을 활용하여 component 를 분류
-- Atoms : html tag 하나에 styled component 로 styling 작업만 한 component
-- Molucules : Atoms 2개 이상을 합쳐서 표현한 component
-- Organisms : Recoil state 를 hooks 를 활용하여 읽어온 후, 렌더링 하는 component
+  - Atoms : html tag 하나에 styled component 로 styling 작업만 한 component
+  - Molucules : Atoms 2개 이상을 합쳐서 표현한 component
+  - Organisms : Recoil state 를 hooks 를 활용하여 읽어온 후, 렌더링 하는 component
 
 ### Orgnisms components
 
@@ -52,16 +52,16 @@
 
 ## Test
 
-React testing library 활용
+React testing library 활용 integration test 위주로 진행
 
-### Business Logic
+### Business Logic test list
 
 비동기 요청하는 InitialPropsState test
 
 - initialProps.test.tsx
   - amount 3, difficulty easy 로 설정했을 때 initialProps 그대로 받아오는지
 
-### View Logic
+### View Logic test list
 
 각 페이지 별 integration test
 
@@ -70,7 +70,7 @@ React testing library 활용
   - quiz difficulty 값 바뀌는 것 잘 렌더링 하는지
 - QuizPage.test.tsx
   - 4 example 렌더링하는지
-  - 초기에 버튼 disabled 인지
+  - 초기에 버튼 disabled 인지(요구사항에는 안보이도록 했지만, 보이되 disabled 가 더 좋은? UI 인것 같아 수정해서 구현해봤습니다)
   - 답을 선택하면 버튼 enabled 되는지
 - ResultPage.test.tsx
   - 모든 퀴즈 푸는데 걸리는 총 시간(duration) 렌더 되는지
