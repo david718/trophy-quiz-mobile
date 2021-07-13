@@ -4,6 +4,14 @@
 
 퀴즈 풀이 웹사이트(모바일)
 
+## Getting started
+
+1. git clone `https://github.com/david718/classting-subject.git`
+2. cd classting-subject
+3. yarn install
+   - yarn start
+   - yarn test
+
 ## Business logic
 
 - use Recoil to manage global state
