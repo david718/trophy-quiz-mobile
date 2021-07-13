@@ -51,11 +51,19 @@ React testing library 활용
 비동기 요청하는 InitialPropsState test
 
 - initialProps.test.tsx
+  - amount 3, difficulty easy 로 설정했을 때 initialProps 그대로 받아오는지
 
 ### View Logic
 
 각 페이지 별 integration test
 
 - LandingPage.test.tsx
+  - quiz numbers 값 바뀌는 것 잘 렌더링 하는지
+  - quiz difficulty 값 바뀌는 것 잘 렌더링 하는지
 - QuizPage.test.tsx
+  - 4 example 렌더링하는지
+  - 초기에 버튼 disabled 인지
+  - 답을 선택하면 버튼 enabled 되는지
 - ResultPage.test.tsx
+  - 모든 퀴즈 푸는데 걸리는 총 시간(duration) 렌더 되는지
+  - 모든 퀴즈 정답수 오답수 렌더 되는지
