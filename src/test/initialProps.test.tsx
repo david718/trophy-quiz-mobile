@@ -34,18 +34,23 @@ export const renderRecoilValue = <T extends Object>(
 };
 
 test('when START button in Landing Page was clicked, InitialProps selector get initial props', async () => {
+  const testAmount = 3;
+  const testDifficulty = EASY_DIFFICULTY;
+
   const { result, waitForNextUpdate } = renderRecoilValue(
     InitialPropsState,
     ({ set, reset }) => {
-      set(QuizNumbersState, 3);
-      set(QuizDifficultyState, EASY_DIFFICULTY);
+      set(QuizNumbersState, testAmount);
+      set(QuizDifficultyState, testDifficulty);
       reset(InitialPropsState);
     },
     '/quiz',
   );
+
   await waitForNextUpdate({ timeout: 4000 });
-  expect(result.current.results.length).toBe(3);
+
+  expect(result.current.results.length).toBe(testAmount);
   expect(
-    result.current.results.every((quiz) => quiz.difficulty == EASY_DIFFICULTY),
+    result.current.results.every((quiz) => quiz.difficulty == testDifficulty),
   ).toBe(true);
 });
