@@ -32,7 +32,6 @@ const Quiz = () => {
 
     setSelectedAnswer(e.target.name);
     setQuizResults((prev) => {
-      console.log(Date.now() - startTime.current);
       return [
         ...prev,
         {
