@@ -1,5 +1,6 @@
+/* eslint-disable */
 import { Suspense } from 'react';
-import { BrowserRouter, Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import {
   RecoilValue,
   MutableSnapshot,
@@ -7,7 +8,6 @@ import {
   useRecoilValue,
 } from 'recoil';
 import { renderHook } from '@testing-library/react-hooks';
-import { createMemoryHistory, MemoryHistory } from 'history';
 
 import { EASY_DIFFICULTY } from 'src/constant';
 import {

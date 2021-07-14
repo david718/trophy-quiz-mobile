@@ -31,16 +31,14 @@ const Quiz = () => {
     //}
 
     setSelectedAnswer(e.target.name);
-    setQuizResults((prev) => {
-      return [
-        ...prev,
-        {
-          index: currentQuizIndex,
-          duration: Date.now() - startTime.current,
-          correct: e.target.name == currentQuiz.correct_answer,
-        },
-      ];
-    });
+    setQuizResults((prev) => [
+      ...prev,
+      {
+        index: currentQuizIndex,
+        duration: Date.now() - startTime.current,
+        correct: e.target.name == currentQuiz.correct_answer,
+      },
+    ]);
   };
 
   useEffect(() => {
