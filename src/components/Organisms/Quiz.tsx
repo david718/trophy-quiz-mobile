@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { TResponseData } from 'src/state/InitialProps';
@@ -20,7 +20,7 @@ const Quiz = () => {
     SelectedAnswerState,
   );
   const setQuizResults = useSetRecoilState(QuizResultsState);
-  const startTime = useRef<number>(Date.now());
+  const startTime = useRef(Date.now());
 
   const handleChange = (e: any) => {
     //여기 오답노트 만들자리
@@ -31,15 +31,22 @@ const Quiz = () => {
     //}
 
     setSelectedAnswer(e.target.name);
-    setQuizResults((prev) => [
-      ...prev,
-      {
-        index: currentQuizIndex,
-        duration: Date.now() - startTime.current,
-        correct: e.target.name == currentQuiz.correct_answer,
-      },
-    ]);
+    setQuizResults((prev) => {
+      console.log(Date.now() - startTime.current);
+      return [
+        ...prev,
+        {
+          index: currentQuizIndex,
+          duration: Date.now() - startTime.current,
+          correct: e.target.name == currentQuiz.correct_answer,
+        },
+      ];
+    });
   };
+
+  useEffect(() => {
+    startTime.current = Date.now();
+  }, [currentQuizIndex]);
 
   return (
     <Content
