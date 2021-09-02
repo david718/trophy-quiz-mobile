@@ -1,5 +1,7 @@
 # Trophy quiz
 
+<img width="160" alt="Screen Shot 2021-09-02 at 6 18 09 PM" src="https://user-images.githubusercontent.com/25860602/131817989-ec41e04c-86b9-447f-8e57-e25bb31ea2a5.png">
+
 Solve Quiz, and get Trophies!
 
 - React
