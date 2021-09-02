@@ -40,7 +40,7 @@ Solve Quiz, and get Trophies!
   - Organisms : Less reuseability. managing Recoil state like container components.
   - Pages : Page with Organisms
 
-### Orgnisms components
+### Orgnisms components in Atomic Design
 
 - TitleAnimation : In LandingPage, title and animation
 - QuizDifficulty : In LandingPage, select quiz difficulty
