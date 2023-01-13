@@ -3,15 +3,16 @@ import { useResetRecoilState } from 'recoil';
 
 import { InitialPropsState } from 'src/state';
 import { FixedFooter } from 'components/Molecules';
+import { QUIZ_PAGENAME } from 'src/constant';
 import Atoms from 'components/Atoms';
 
 const LandingFooter = () => {
   const history = useHistory();
-  const resetIntialProps = useResetRecoilState(InitialPropsState);
+  const resetInitialProps = useResetRecoilState(InitialPropsState);
 
   const handleClick = () => {
-    resetIntialProps();
-    history.push('/quiz');
+    resetInitialProps();
+    history.push(`/${QUIZ_PAGENAME}`);
   };
 
   return (

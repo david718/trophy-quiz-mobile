@@ -7,6 +7,7 @@ import {
   QuizNumbersState,
 } from 'src/state';
 import { DEFAULT_NUMBERS, QUIZ_PAGENAME } from 'src/constant';
+import { TQueryData } from './QueryData';
 
 export type TQuiz = {
   category: string;
@@ -23,17 +24,31 @@ export type TResponseData = {
   results: TQuiz[];
 };
 
+const useQueryData = (): [
+  TQueryData | undefined,
+  (newValue?: TQueryData) => void,
+] => {
+  const KEY = 'queryData';
+  const queryData = localStorage.getItem(KEY) as string;
+  const update = (newValue?: TQueryData) => {
+    return localStorage.setItem(KEY, JSON.stringify(newValue));
+  };
+  return [JSON.parse(queryData), update];
+};
+
 export default selector<TResponseData>({
   key: 'initilaOrderState',
   get: async ({ get }) => {
+    const [storageQueryData] = useQueryData();
     const queryData = get(QueryDataState);
     if (
-      queryData == undefined ||
+      (queryData == undefined && storageQueryData === undefined) ||
       window.location.pathname != `/${QUIZ_PAGENAME}`
     )
       return undefined;
 
-    const { amount, difficulty } = queryData;
+    const amount = queryData?.amount || storageQueryData?.amount;
+    const difficulty = queryData?.difficulty || storageQueryData?.difficulty;
 
     const axios = customAxios();
     const response = await axios({
@@ -66,10 +81,13 @@ export default selector<TResponseData>({
     return decodedResponseData;
   },
   set: ({ get, set }) => {
+    const [, setStorage] = useQueryData();
     const amount = get(QuizNumbersState);
     const difficulty = get(QuizDifficultyState);
+    const queryData = { amount, difficulty };
 
-    set(QueryDataState, { amount, difficulty });
+    setStorage(queryData);
+    set(QueryDataState, queryData);
     set(QuizNumbersState, DEFAULT_NUMBERS);
     set(QuizDifficultyState, undefined);
   },

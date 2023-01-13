@@ -1,8 +1,9 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
 const customAxios = () => {
+  const REACT_APP_API_SERVER = `https://opentdb.com/api.php`;
   const axiosConfig: AxiosRequestConfig = {
-    baseURL: process.env.REACT_APP_API_SERVER,
+    baseURL: REACT_APP_API_SERVER, // process.env.REACT_APP_API_SERVER
   };
   return axios.create(axiosConfig);
 };
